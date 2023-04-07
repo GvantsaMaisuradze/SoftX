@@ -1,6 +1,9 @@
+.table-section{
+    padding-top:10%;
 
-{
-    
+}
+th{
+    width:10px;
 }
 td, th {  
     border: 1px solid #ddd;
@@ -12,4 +15,11 @@ td, th {
 }
 h2{
     margin:10px 0px;
+}
+a{
+    text-decoration:none;
+}
+.contextMenu{
+    display: grid;
+    width: 30px;
 }

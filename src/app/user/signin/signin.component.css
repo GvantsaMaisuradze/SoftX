@@ -1,0 +1,35 @@
+.signin{
+    box-sizing: border-box;
+    list-style-type: none;
+    outline:none;
+    text-decoration: none;
+    border:none;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 0;
+
+}
+.container{
+    margin-top:40%;
+    border-radius:2px;
+   
+}
+
+.card-header{
+    padding:20px;
+    font-weight: 700;
+    font-size: 23px;
+}
+label{
+    padding:15px 0 10px;
+}
+
+.btn-primary{
+    color:#ffff;
+    padding:10px 15px;
+    font-size: 20px;
+    margin:15px 0 ;
+}
+.alert{
+    
+}

@@ -1,1 +1,40 @@
-<p>signin works!</p>
+
+<section class="col-md-5 m-auto">
+    <app-alert *ngIf="signInForm.get('username')?.value !== 'admin' && signInForm.get('password')?.value !== 'admin'" [color]="alertColor" class="alert" >
+        {{ alertMsg }}
+      </app-alert>
+    <form [formGroup]="signInForm" (ngSubmit)="onFormSubmit()" #form="ngForm">
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Angular SignIn</h2>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="username">USERNAME</label>
+                        <app-input [control]="username" placeholder="username:admin" type="text"></app-input>
+                        <!-- <input
+                        formControlName="username"
+                        type="text" class="form-control" placeholder="username:admin"> -->
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="username">PASSWORD</label>
+                        <app-input [control]="password" placeholder="password:admin" type="password"></app-input>
+                        <!-- <input
+                        formControlName="password"
+                        type="password" class="form-control" placeholder="password:admin"> -->
+                    </div>
+                    <div class="singin-button">
+                        <button 
+                        [disabled]="!form.valid"
+                        class="btn btn-primary" type="submit">
+                        SignIn
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+

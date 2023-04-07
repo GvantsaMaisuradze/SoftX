@@ -1,0 +1,12 @@
+<input [formControl]="control" [type]="type" [placeholder]="placeholder"  class="form-control"/>
+  <ng-container *ngIf="control.touched && control.dirty">
+    
+      <p *ngIf="control.errors?.['required']"
+          class="text-danger">
+              Field is required
+      </p>
+      <p *ngIf="control.errors?.['maxlength']"
+          class="text-danger">
+              something is incorrect
+      </p>
+</ng-container>
