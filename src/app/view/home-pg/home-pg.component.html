@@ -1,0 +1,31 @@
+<section class="table-section col-md-12">
+  <h2>Users List</h2>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Id.</th>
+            <th scope="col">Name</th>
+            <th scope="col">userame</th>
+            <th scope="col">email</th>
+            <th scope="col">Website</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td> {{user.id}}</td> 
+            <td> {{user.name}}</td>
+            <td> {{user.username}}</td>
+            <td> {{user.email}}</td>
+            <td> {{user.website}}</td>
+          </tr>
+          <div class="">
+            <a href="/">
+              Details
+            </a>
+            <button>
+              Delete
+            </button>
+          </div>
+        </tbody>
+      </table>
+</section>

@@ -1,0 +1,15 @@
+.users-info{
+    box-sizing: border-box;
+    list-style-type: none;
+    outline:none;
+    text-decoration: none;
+    border:none;
+    font-weight: 400;
+    font-size: 19px;
+    margin: 0;
+}
+.users-info img{
+    max-width: 100%;
+    object-fit: cover;
+    height: auto;
+}
