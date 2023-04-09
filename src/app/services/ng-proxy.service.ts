@@ -13,4 +13,5 @@ export class NgProxyService {
     var fullUrl:string= `${environment.apiBaseUrl}`
     return this.httpClient.get(fullUrl);
   }
+ 
 }

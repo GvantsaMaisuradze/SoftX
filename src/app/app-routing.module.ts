@@ -10,7 +10,7 @@ const routes: Routes = [
   { path:"home",
   component:HomePgComponent},
   // canActivate:[GuardService]},
-  { path:'details',component:DetailsPgComponent}
+  { path:'details/:id',component:DetailsPgComponent}
 
 ];
 

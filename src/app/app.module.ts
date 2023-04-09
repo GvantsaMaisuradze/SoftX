@@ -11,6 +11,7 @@ import { DetailsPgComponent } from './view/details-pg/details-pg.component';
 import { InputComponent } from './shared/input/input.component';
 import { AlertComponent } from './shared/alert/alert.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,7 @@ import { AlertComponent } from './shared/alert/alert.component';
     SigninComponent,
     DetailsPgComponent,
     InputComponent,
-    AlertComponent
+    AlertComponent,
   ],
   imports: [
     BrowserModule,

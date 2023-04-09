@@ -1,1 +1,10 @@
-<p>details-pg works!</p>
+<section class="details">
+    <div *ngFor="let user of users" class="card text-bg-white col-md-3 m-auto text-white">
+        <img src="assets/images/received_655190985068488.jpeg" class="card-img" alt="background image">
+        <div class="card-img-overlay">
+          <h5 class="card-title">{{user.name}}</h5>
+          <p class="card-text"></p>
+          <p class="card-text"><small>Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+</section>

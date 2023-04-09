@@ -1,4 +1,4 @@
-<section class="table-section col-md-9 m-auto align-center">
+<section class="table-section col-md-9 m-auto align-center" oncontextmenu="return false;">
   <h2>Users List</h2>
     <table class="table table-bordered">
         <thead>
@@ -10,22 +10,24 @@
             <th scope="col">Website</th>
         </tr>
         </thead>
-        <tbody>
-          <tr *ngFor="let user of users">
+        <tbody *ngFor="let user of users" >
+          <tr (mouseup)="detechLeftMouseClick($event,user)">
             <td> {{user.id}}</td> 
             <td> {{user.name}}</td>
             <td> {{user.username}}</td>
             <td> {{user.email}}</td>
             <td> {{user.website}}</td>
           </tr>
-          <div class="">
-            <a routerLink="/details">
-              Details
-            </a>
-            <button>
-              Delete
-            </button>
+          <div class="contextMenu dropdown-menu m-auto" [ngStyle]="leftPanelStyle" 
+            (clickOutside)="closeContextMenu()" (mouseleave)="closeContextMenu()">
+              <a (click)="goToDetailsPage(user.id)" class="dropdown-item" routerLink="/details/{{user.id}}">
+                Details
+              </a>
+              <button class="dropdown-item" (click)="onDelete(users[6].id)">
+                Delete
+              </button>
           </div>
         </tbody>
       </table>
+      
 </section>
