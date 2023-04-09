@@ -13,5 +13,9 @@ export class NgProxyService {
     var fullUrl:string= `${environment.apiBaseUrl}`
     return this.httpClient.get(fullUrl);
   }
+  getDataById(id: string): any {
+    const fullUrl = `${environment.apiBaseUrl}/${id}`;
+    return this.httpClient.get(fullUrl);
+  }
  
 }

@@ -1,8 +1,8 @@
 
 <section class="col-md-5 m-auto">
-    <app-alert *ngIf="signInForm.get('username')?.value !== 'admin' && signInForm.get('password')?.value !== 'admin'" [color]="alertColor" class="alert" >
+    <app-alert *ngIf="username.touched && password.touched && (signInForm.get('username')?.value !== 'admin' || signInForm.get('password')?.value !== 'admin')" [color]="alertColor" class="alert" >
         {{ alertMsg }}
-      </app-alert>
+    </app-alert>
     <form [formGroup]="signInForm" (ngSubmit)="onFormSubmit()" #form="ngForm">
         <div class="container">
             <div class="card">

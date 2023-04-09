@@ -9,16 +9,16 @@ import { NgProxyService } from 'src/app/services/ng-proxy.service';
 })
 export class DetailsPgComponent implements OnInit {
 user:any;
-users:any[] = [];
   constructor( private router:Router, private proxy:NgProxyService , private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.proxy.getAllData().subscribe((response:any)=>{
-      this.users = response;
-      console.log(this.users)
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.proxy.getDataById(id).subscribe((response: any) => {
+        this.user = response;
+        console.log(this.user);
       });
-      
+    }
   }
-  
 
 }

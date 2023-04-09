@@ -10,8 +10,8 @@
             <th scope="col">Website</th>
         </tr>
         </thead>
-        <tbody *ngFor="let user of users" >
-          <tr (mouseup)="detechLeftMouseClick($event,user)">
+        <tbody>
+          <tr *ngFor="let user of users" (mouseup)="detechLeftMouseClick($event,user)">
             <td> {{user.id}}</td> 
             <td> {{user.name}}</td>
             <td> {{user.username}}</td>
@@ -20,10 +20,10 @@
           </tr>
           <div class="contextMenu dropdown-menu m-auto" [ngStyle]="leftPanelStyle" 
             (clickOutside)="closeContextMenu()" (mouseleave)="closeContextMenu()">
-              <a (click)="goToDetailsPage(user.id)" class="dropdown-item" routerLink="/details/{{user.id}}">
+              <a  class="dropdown-item" [routerLink]="['/details', currentRecord?.id]">
                 Details
               </a>
-              <button class="dropdown-item" (click)="onDelete(users[6].id)">
+              <button class="dropdown-item" (click)="onDelete(currentRecord?.id)">
                 Delete
               </button>
           </div>

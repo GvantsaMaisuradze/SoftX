@@ -1,10 +1,53 @@
 <section class="details">
-    <div *ngFor="let user of users" class="card text-bg-white col-md-3 m-auto text-white">
-        <img src="assets/images/received_655190985068488.jpeg" class="card-img" alt="background image">
-        <div class="card-img-overlay">
-          <h5 class="card-title">{{user.name}}</h5>
-          <p class="card-text"></p>
-          <p class="card-text"><small>Last updated 3 mins ago</small></p>
+  <div class="card text-bg-white col-md-3 m-auto text-white">
+    <img src="assets/images/received_655190985068488.jpeg" class="card-img" alt="background image">
+    <div class="card-img-overlay">
+      <div class="user-id">
+        {{user.id}}
+      </div>
+      <div class="user-username">
+       <h2>
+        {{user.username.charAt(0)}}
+       </h2>
+      </div>
+      <div class="user-info">
+        <h4>{{user.name}}</h4>
+        <p>{{user.email}}</p>
+      </div><!-- ./user-info -->
+    </div><!-- ./card-img-overlay -->
+    <div class="card-footer text-body-secondary bg-dark">
+      <div class="card-footer__icons d-flex justify-content-center ">
+        <div class="footer-facebook me-2">
+          <a href="facebook.com">
+            <svg height="100%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" 
+              version="1.1" viewBox="0 0 512 512" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" 
+              xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <path d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" 
+              style="fill:#ffff;"/>
+          </svg>
+          </a>
+        </div>
+        <div class="footer-linkedin me-2">
+         <a href="linkedin.com">
+          <svg style="fill:#ffff;" height="56.693px" id="Layer_1" version="1.1" 
+            viewBox="0 0 56.693 56.693" width="35px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M30.071,27.101v-0.077c-0.016,0.026-0.033,0.052-0.05,0.077H30.071z"/>
+            <path d="M49.265,4.667H7.145c-2.016,0-3.651,1.596-3.651,3.563v42.613c0,1.966,1.635,3.562,3.651,3.562h42.12   c2.019,0,3.654-1.597,3.654-3.562V8.23C52.919,6.262,51.283,4.667,49.265,4.667z M18.475,46.304h-7.465V23.845h7.465V46.304z    M14.743,20.777h-0.05c-2.504,0-4.124-1.725-4.124-3.88c0-2.203,1.67-3.88,4.223-3.88c2.554,0,4.125,1.677,4.175,3.88   C18.967,19.052,17.345,20.777,14.743,20.777z M45.394,46.304h-7.465V34.286c0-3.018-1.08-5.078-3.781-5.078   c-2.062,0-3.29,1.389-3.831,2.731c-0.197,0.479-0.245,1.149-0.245,1.821v12.543h-7.465c0,0,0.098-20.354,0-22.459h7.465v3.179   
+            c0.992-1.53,2.766-3.709,6.729-3.709c4.911,0,8.594,3.211,8.594,10.11V46.304z"/></g>
+        </svg>
+         </a>
+        </div>
+        <div class="footer-googleplus">
+          <a href="googleplus.com">
+            <svg style="fill:#ffff;" height="56.6934px" id="Layer_1"  
+              version="1.1" viewBox="0 0 56.6934 56.6934" width="50px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" 
+              xmlns:xlink="http://www.w3.org/1999/xlink"><g>
+              <path d="M19.6671,25.7867c-0.0075,1.7935,0,3.5869,0.0076,5.3803c3.0067,0.098,6.0208,0.0527,9.0275,0.098   c-1.3262,6.6689-10.3989,8.8315-15.199,4.4761C8.5674,31.9206,8.801,23.5412,13.9327,19.992   c3.5869-2.8635,8.6884-2.1552,12.2752,0.324c1.4092-1.3036,2.7278-2.6977,4.0013-4.1445   c-2.984-2.3812-6.6462-4.0767-10.5421-3.8958c-8.1307-0.2713-15.6059,6.8497-15.7415,14.9805   c-0.52,6.6462,3.8506,13.1644,10.0222,15.5155c6.1489,2.3661,14.031,0.7535,17.957-4.77c2.5922-3.4889,3.1498-7.98,2.8484-12.1999   C29.7194,25.7641,24.6933,25.7716,19.6671,25.7867z"/><path d="M49.0704,25.7641c-0.0151-1.4996-0.0226-3.0067-0.0301-4.5062c-1.4996,0-2.9916,0-4.4836,0   c-0.0151,1.4996-0.0301,2.9991-0.0377,4.5062c-1.5071,0.0075-3.0067,0.0151-4.5062,0.0302c0,1.4995,0,2.9915,0,4.4836   c1.4995,0.0151,3.0066,0.0302,4.5062,0.0452c0.0151,1.4996,0.0151,2.9991,0.0302,4.4987c1.4996,0,2.9916,0,4.4911,0   c0.0075-1.4996,0.015-2.9991,0.0301-4.5062c1.5071-0.0151,3.0067-0.0226,4.5062-0.0377c0-1.4921,0-2.9916,0-4.4836   
+              C52.0771,25.7792,50.57,25.7792,49.0704,25.7641z"/></g>
+          </svg>
+          </a>
         </div>
       </div>
+    </div>
+  </div>
 </section>

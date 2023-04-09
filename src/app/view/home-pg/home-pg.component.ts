@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NgProxyService } from 'src/app/services/ng-proxy.service';
 
 @Component({
@@ -7,55 +8,42 @@ import { NgProxyService } from 'src/app/services/ng-proxy.service';
   styleUrls: ['./home-pg.component.css']
 })
 export class HomePgComponent implements OnInit {
-
+  user:any;
   users:any[]=[];
-  userId:any;
   leftPanelStyle:any = {};
   currentRecord:any;
-  constructor(private proxy:NgProxyService) { }
+  constructor(private proxy:NgProxyService, private route:ActivatedRoute) { }
   
   ngOnInit(): void {
     this.proxy.getAllData().subscribe((response:any)=>{
       this.users = response;
-      console.log(this.users)
-      });
-      this.closeContextMenu()
-    }
-
-    detechLeftMouseClick($event:any, user:any) {
-      if($event.which === 1){
-        this.leftPanelStyle = {
-          'display': 'block',
-          'position' : 'absolute',
-         
-        };
-        this.currentRecord = user;
-      }
-    }
-    closeContextMenu(){
-      this.leftPanelStyle = {
-        'display': 'none'
-      };
-    }
-
-    goToDetailsPage(id:number){
-      console.log(id)
-    }
-
-    onDelete(id:number):void{    
-      this.closeContextMenu();
-      confirm("Are you sure you want to delete "+ this.currentRecord.name +' details ?');
-      console.log(id)
-
-    }
-
+    });
+    this.closeContextMenu()
   }
-  // $("#context-menu").kendoContextMenu({
-  //   target: "#grid",
-  //   filter: "tr[role='row']",
-  //   select: function(e) {
-  //     var grid = $("#grid").data("kendoGrid");
-  //     var model = grid.dataItem(e.target);
-  //     alert( model.age + " " + model.name);
-  //   }
-  // });
+
+  detechLeftMouseClick($event:any, user:any) {
+    if($event.which === 1){
+      this.leftPanelStyle = {
+        'display': 'grid',
+        'position' : 'absolute',
+        'left.px' : $event.layerX,
+        'top.px' : $event.layerY,
+      };
+      this.currentRecord = user;
+    }
+  }
+  
+  closeContextMenu(){
+    this.leftPanelStyle = {
+      'display': 'none'
+    };
+  }
+
+  onDelete(id:number):void{    
+    this.closeContextMenu();
+    if (confirm("Are you sure you want to delete "+ this.currentRecord.name +' details ?')) {
+      const index = this.users.findIndex(user => user.id === id);
+      this.users.splice(index, 1);
+    }
+  }
+}
