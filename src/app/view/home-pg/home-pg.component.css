@@ -23,7 +23,7 @@ a{
 .contextMenu{
     border-radius:1; 
     border:1px solid lightgray;
-    aligh-items:center;
+    align-items:center;
 }
 .contextMenu a{
     border-bottom:1px solid lightgray;
