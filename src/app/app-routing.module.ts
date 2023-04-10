@@ -8,8 +8,8 @@ import { GuardService } from './services/guard.service';
 const routes: Routes = [
   { path:"",component:SigninComponent},
   { path:"home",
-  component:HomePgComponent},
-  // canActivate:[GuardService]},
+  component:HomePgComponent,
+  canActivate:[GuardService]},
   { path:'details/:id',component:DetailsPgComponent}
 
 ];

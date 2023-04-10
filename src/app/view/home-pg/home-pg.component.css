@@ -1,14 +1,15 @@
 .table-section{
-    padding-top:10%;
+    padding-top:3%;
+    font-size:14px;
 
 }
 th{
-    width:10px;
+    max-width:10px;
 }
 td, th {  
     border: 1px solid #ddd;
     text-align: left;
-    padding:18px;
+    padding:14px;
 }
 .table {
     text-indent: 10px;
@@ -31,4 +32,10 @@ a{
     padding:10px;
     coursor:pointer;
 }
-
+@media (max-widht: 1024px){
+    .user-tables{
+        overflow-x:scroll;
+    }
+}
+  
+ 
